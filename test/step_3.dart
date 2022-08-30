@@ -8,7 +8,7 @@ void main() {
     final DateTime someMsInTheFuture =
         currentTime.add(Duration(milliseconds: 20));
     final DateTime someMsInThePast =
-        currentTime.add(Duration(milliseconds: 20));
+        currentTime.subtract(Duration(milliseconds: 20));
     final DateTime future = DateTime(2025, 8, 2, 5, 2, 4);
     final expectedFormattedFuture = "2025-08-02 05:02:04";
     final DateTime oneSecAgo = currentTime.subtract(Duration(seconds: 1));
@@ -38,6 +38,8 @@ void main() {
         currentTime.subtract(Duration(hours: 23, minutes: 29, seconds: 29));
     final DateTime twentyFourHoursAgo =
         currentTime.subtract(Duration(hours: 24));
+    final DateTime twentyThreeHours59Min59Sec =
+        currentTime.subtract(Duration(hours: 23, minutes: 59, seconds: 59));
     final DateTime twentyFourHours29Min29SecAgo =
         currentTime.subtract(Duration(hours: 24, minutes: 29, seconds: 29));
     final DateTime oneDayAgo = currentTime.subtract(Duration(days: 1));
@@ -73,16 +75,17 @@ void main() {
     expect(formatTime(twelveHours40MinAgo), "13 hour(s) ago");
     expect(formatTime(twentyThreeHoursAgo), "23 hour(s) ago");
     expect(formatTime(twentyThreeHours29Min29SecAgo), "23 hour(s) ago");
-    expect(formatTime(twentyFourHoursAgo), "24 hour(s) ago");
-    expect(formatTime(twentyFourHours29Min29SecAgo), "24 hour(s) ago");
-    expect(formatTime(oneDayAgo), "1 day ago");
-    expect(formatTime(thirtyHoursAgo), "1 day ago");
-    expect(formatTime(thirtyFiveHours59Min59SecAgo), "1 day ago");
+    expect(formatTime(twentyThreeHours59Min59Sec), "24 hour(s) ago");
+    expect(formatTime(twentyFourHoursAgo), "one day ago");
+    expect(formatTime(oneDayAgo), "one day ago");
+    expect(formatTime(twentyFourHours29Min29SecAgo), "one day ago");
+    expect(formatTime(thirtyHoursAgo), "one day ago");
+    expect(formatTime(thirtyFiveHours59Min59SecAgo), "one day ago");
     expect(formatTime(thirtySixHoursAgo), "2 days ago");
     expect(formatTime(threeDaysAgo), "3 days ago");
     expect(formatTime(fiveDaysAgo), "5 days ago");
     expect(formatTime(sixDays23Hours59Min59SecAgo), "7 days ago");
     expect(formatTime(sevenDaysAgo), expectedSevenDaysAgoString);
-    expect(longTimeAgo, longTimeAgoString);
+    expect(formatTime(longTimeAgo), longTimeAgoString);
   });
 }
