@@ -11,5 +11,5 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable' # or: 'beta', 'dev' or 'master'
-      - run: dart pub get
-      - run: dart test test/step_1.dart test/step_2.dart
+      - run: flutter pub get
+      - run: flutter test test/step_1.dart test/step_2.dart
