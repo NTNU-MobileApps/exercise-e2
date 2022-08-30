@@ -1,0 +1,15 @@
+name: Run all tests - Widget, Unit, Integration
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable' # or: 'beta', 'dev' or 'master'
+      - run: dart pub get
+      - run: dart test test/step_1.dart test/step_2.dart
