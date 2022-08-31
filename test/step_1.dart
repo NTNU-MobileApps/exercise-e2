@@ -7,5 +7,6 @@ void main() {
     expect(a.hasWings, false);
     expect(a.name, "Crocodile");
     expect(a.legCount, 4);
+    expect(a.canFly, false);
   });
 }
