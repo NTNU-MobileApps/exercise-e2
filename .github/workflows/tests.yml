@@ -12,4 +12,4 @@ jobs:
         with:
           channel: 'stable' # or: 'beta', 'dev' or 'master'
       - run: flutter pub get
-      - run: flutter test test/step_1.dart test/step_2.dart
+      - run: flutter test test/step_0.dart
