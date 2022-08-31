@@ -8,7 +8,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 5
+      "points": 10
     },
     {
       "name": "Task 2: FlyingAnimal class",
@@ -18,7 +18,17 @@
       "output": "Duck is flying at 3.14m/s\nSpeedy Duck is flying at 220.0m/s\n",
       "comparison": "included",
       "timeout": 10,
-      "points": 5
+      "points": 10
+    },
+    {
+      "name": "Task 3: DateTime formatting",
+      "setup": "",
+      "run": "flutter test test/step_3.dart",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
     }
   ]
 }
